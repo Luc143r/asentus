@@ -6,6 +6,7 @@
 <li>HTML</li>
 <li>CSS</li>
 <li>SCSS</li>
+<li>Bootstrap</li>
 <li>JavaScript</li>
 <li>Django 3.0</li>
 </ul>
