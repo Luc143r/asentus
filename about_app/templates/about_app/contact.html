@@ -1,0 +1,123 @@
+{% extends 'about_app/base.html' %}
+{% load static %}
+
+
+{% block head %}
+    <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
+    <link href="{% static 'vendor/simple-line-icons/simple-line-icons.min.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+    <!-- PAGE LEVEL PLUGIN STYLES -->
+    <link href="{% static 'css/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/swiper/css/swiper.min.css' %}" rel="stylesheet" type="text/css"/>
+    <!-- THEME STYLES -->
+    <link href="{% static 'css/layout.min.css' %}" rel="stylesheet" type="text/css"/>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico"/>
+{% endblock %}
+
+
+{% block header %}
+    <!--========== HEADER ==========-->
+    <header class="header navbar-fixed-top">
+        <!-- Navbar -->
+        <nav class="navbar" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="menu-container">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="toggle-icon"></span>
+                    </button>
+
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a class="logo-wrap" href="/">
+                            <img class="logo-img logo-img-main" src="{% static 'img/logo.png' %}" alt="Asentus Logo">
+                            <img class="logo-img logo-img-active" src="{% static 'img/logo-dark.png' %}" alt="Asentus Logo">
+                        </a>
+                    </div>
+                    <!-- End Logo -->
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse nav-collapse">
+                    <div class="menu-container">
+                        <ul class="navbar-nav navbar-nav-right">
+                            <li class="nav-item"><a class="nav-item-child nav-item-hover active" href="/">Home</a></li>
+                            <li class="nav-item"><a class="nav-item-child nav-item-hover" href="/price">Pricing</a></li>
+                            <li class="nav-item"><a class="nav-item-child nav-item-hover" href="/about">About</a></li>
+                            <li class="nav-item"><a class="nav-item-child nav-item-hover" href="/product">Products</a></li>
+                            <li class="nav-item"><a class="nav-item-child nav-item-hover" href="/faq">FAQ</a></li>
+                            <li class="nav-item"><a class="nav-item-child nav-item-hover" href="/contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- End Navbar Collapse -->
+            </div>
+        </nav>
+        <!-- Navbar -->
+    </header>
+    <!--========== END HEADER ==========-->
+{% endblock %}
+
+
+{% block content %}
+        <!--========== PARALLAX ==========-->
+        <div class="parallax-window" data-parallax="scroll" style="background-image: url({% static 'img/1920x1080/01.jpg' %});">
+            <div class="parallax-content container">
+                <h1 class="carousel-title">Contact</h1>
+                <p>Lorem ipsum dolor amet consectetur adipiscing dolore magna aliqua <br/> enim minim estudiat veniam siad venumus dolore</p>
+            </div>
+        </div>
+        <!--========== PARALLAX ==========-->
+
+        <!--========== PAGE LAYOUT ==========-->
+        <!-- Contact List -->
+        <div class="section-seperator">
+            <div class="content-lg container">
+                <div class="row">
+                    {% for i in contact %}
+                        <!-- Contact List -->
+                        <div class="col-sm-4 sm-margin-b-50">
+                            <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".3s">
+                                <h3>{{ i.city }} <span class="text-uppercase margin-l-20">{{ i.category }}</span></h3>
+                                <p>{{ i.content }}</p>
+                                <ul class="list-unstyled contact-list">
+                                    <li><i class="margin-r-10 color-base icon-call-out"></i> {{ i.number }}</li>
+                                    <li><i class="margin-r-10 color-base icon-envelope"></i> {{ i.mail }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- End Contact List -->
+                    {% endfor %}
+                </div>
+                <!--// end row -->
+            </div>
+        </div>
+        <!-- End Contact List -->
+
+        <!-- Google Map -->
+        <div id="map" class="map height-400"></div>
+
+        <!-- Promo Section -->
+        <div class="promo-section overflow-h">
+            <div class="container">
+                <div class="clearfix">
+                    <div class="ver-center">
+                        <div class="ver-center-aligned">
+                            <div class="promo-section-col">
+                                <h2>Our Clients</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret dolore magna aliqua enim minim veniam exercitation ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret dolore magna aliqua enim minim veniam exercitation</p>
+                                <p>Ipsum dolor sit amet consectetur adipiscing elit sed tempor incididut ut sead laboret dolore magna aliqua enim minim veniam exercitation ipsum dolor sit amet consectetur adipiscing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="promo-section-img-right">
+                <img class="img-responsive" src="{% static 'img/970x970/01.jpg' %}" alt="Content Image">
+            </div>
+        </div>
+        <!-- End Promo Section -->
+        <!--========== END PAGE LAYOUT ==========-->
+{% endblock %}
