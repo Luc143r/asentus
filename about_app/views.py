@@ -134,6 +134,14 @@ def product_page(request):
 
     return render(request, 'about_app/products.html', {"products": products, "form": form})
 
+
+def product_detail(request, pk):
+    product = Latest_product.objects.get(pk=pk)
+    all_products = Latest_product.objects.all()
+    form = FeedbackForms()
+    return render(request, 'about_app/product_detail.html', {"product": product, "products": all_products, "form": form})
+
+
 def feedback_page(request):
     feedback = Feedback.objects.all()
     form = FeedbackForms(request.POST)
