@@ -83,7 +83,7 @@
                     <div class="service" data-height="height">
                         <h3>{{ i.title }}</h3>
                         <p class="margin-b-5">{{ i.content }}</p>
-                    </div>asdasd
+                    </div>
                 </div>
             </div>
             {% endfor %}
@@ -142,7 +142,8 @@
                             <li class="pricing-list-item">{{ sub.options2 }}</li>
                             <li class="pricing-list-item">{{ sub.options3 }}</li>
                         </ul>
-                        <a href="/price" class="btn-theme btn-theme-sm btn-default-bg text-uppercase">Choose</a>
+                        <a href="{% url 'sub_detail' pk=sub.pk %}"
+                            class="btn-theme btn-theme-sm btn-default-bg text-uppercase">Choose</a>
                     </div>
                     <!-- End Pricing -->
                 </div>

@@ -113,7 +113,7 @@
             </div>
             <h3>{{ product.title }} <span class="text-uppercase margin-l-20">{{ product.category }}</span></h3>
             <p>{{ product.content }}</p>
-            <a class="link" href="">Read More</a>
+            <a class="link" href="{% url 'product_detail' pk=product.pk %}">Read More</a>
         </div>
         <!-- End Our Exceptional Solutions -->
         {% endfor %}

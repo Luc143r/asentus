@@ -249,7 +249,7 @@
                 <!-- Pricing -->
                 <div class="pricing">
                     <div class="margin-b-30">
-                        <i class="{{ sub.icon}}"></i>
+                        <i class="{{ sub.icon }}"></i>
                         <h3>{{ sub.title }}<span> - $</span> {{ sub.price }}</h3>
                         <p>{{ sub.content }}</p>
                     </div>
@@ -258,7 +258,7 @@
                         <li class="pricing-list-item">{{ sub.options2 }}</li>
                         <li class="pricing-list-item">{{ sub.options3 }}</li>
                     </ul>
-                    <a href="/price" class="btn-theme btn-theme-sm btn-default-bg text-uppercase">Choose</a>
+                    <a href="{% url 'sub_detail' pk=sub.pk %}" class="btn-theme btn-theme-sm btn-default-bg text-uppercase">Choose</a>
                 </div>
                 <!-- End Pricing -->
             </div>

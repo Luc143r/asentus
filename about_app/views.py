@@ -139,6 +139,21 @@ def product_detail(request, pk):
     product = Latest_product.objects.get(pk=pk)
     all_products = Latest_product.objects.all()
     form = FeedbackForms()
+
+    if request.method == "POST":
+        form = FeedbackForms(request.POST)
+        if form.is_valid():
+            name_user = form.cleaned_data.get("name_field")
+            email_user = form.cleaned_data.get("email_field")
+            phone_user = form.cleaned_data.get("phone_field")
+            message_user = form.cleaned_data.get("message_field")
+            form.clean()
+            
+            Feedback_data = Feedback.objects.create(name=name_user, email=email_user, phone=phone_user, message=message_user)
+        return HttpResponseRedirect('/feedback')
+    else:
+        form = FeedbackForms()
+
     return render(request, 'about_app/product_detail.html', {"product": product, "products": all_products, "form": form})
 
 
@@ -161,3 +176,47 @@ def feedback_page(request):
         form = FeedbackForms()
     
     return render(request, 'about_app/feedback.html', {'feedback': feedback, "form": form})
+
+
+def subscriptions_detail(request, pk):
+    all_sub = Subscription.objects.all()
+    sub = Subscription.objects.get(pk=pk)
+    form = FeedbackForms(request.POST)
+
+    if request.method == "POST":
+        form = FeedbackForms(request.POST)
+        if form.is_valid():
+            name_user = form.cleaned_data.get("name_field")
+            email_user = form.cleaned_data.get("email_field")
+            phone_user = form.cleaned_data.get("phone_field")
+            message_user = form.cleaned_data.get("message_field")
+            form.clean()
+            
+            Feedback_data = Feedback.objects.create(name=name_user, email=email_user, phone=phone_user, message=message_user)
+        return HttpResponseRedirect('/feedback')
+    else:
+        form = FeedbackForms()
+
+    return render(request, 'about_app/subscription_detail.html', {'all_sub': all_sub, 'sub': sub, 'form': form})
+
+
+def team_detail(request, pk):
+    all_team = Team.objects.all()
+    team = Team.objects.get(pk=pk)
+    form = FeedbackForms()
+
+    if request.method == "POST":
+        form = FeedbackForms(request.POST)
+        if form.is_valid():
+            name_user = form.cleaned_data.get("name_field")
+            email_user = form.cleaned_data.get("email_field")
+            phone_user = form.cleaned_data.get("phone_field")
+            message_user = form.cleaned_data.get("message_field")
+            form.clean()
+            
+            Feedback_data = Feedback.objects.create(name=name_user, email=email_user, phone=phone_user, message=message_user)
+        return HttpResponseRedirect('/feedback')
+    else:
+        form = FeedbackForms()
+
+    return render (request, 'about_app/team_detail.html', {'all_team': all_team, 'team': team, 'form': form})

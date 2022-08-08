@@ -1,0 +1,138 @@
+{% extends 'about_app/base.html' %}
+{% load static %}
+
+
+{% block head %}
+<link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
+<link href="{% static 'vendor/simple-line-icons/simple-line-icons.min.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+<!-- PAGE LEVEL PLUGIN STYLES -->
+<link href="{% static 'css/animate.css' %}" rel="stylesheet">
+<link href="{% static 'vendor/swiper/css/swiper.min.css' %}" rel="stylesheet" type="text/css" />
+<!-- THEME STYLES -->
+<link href="{% static 'css/layout.min.css' %}" rel="stylesheet" type="text/css" />
+<!-- Favicon -->
+<link rel="shortcut icon" href="favicon.ico" />
+{% endblock %}
+
+
+{% block header %}
+<!--========== HEADER ==========-->
+<header class="header navbar-fixed-top">
+    <!-- Navbar -->
+    <nav class="navbar" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="menu-container">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="toggle-icon"></span>
+                </button>
+
+                <!-- Logo -->
+                <div class="logo">
+                    <a class="logo-wrap" href="/">
+                        <img class="logo-img logo-img-main" src="{% static 'img/logo.png' %}" alt="Asentus Logo">
+                        <img class="logo-img logo-img-active" src="{% static 'img/logo-dark.png' %}" alt="Asentus Logo">
+                    </a>
+                </div>
+                <!-- End Logo -->
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse nav-collapse">
+                <div class="menu-container">
+                    <ul class="navbar-nav navbar-nav-right">
+                        <li class="nav-item"><a class="nav-item-child nav-item-hover active" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-item-child nav-item-hover" href="/price">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-item-child nav-item-hover" href="/about">About</a></li>
+                        <li class="nav-item"><a class="nav-item-child nav-item-hover" href="/product">Products</a></li>
+                        <li class="nav-item"><a class="nav-item-child nav-item-hover" href="/faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-item-child nav-item-hover" href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End Navbar Collapse -->
+        </div>
+    </nav>
+    <!-- Navbar -->
+</header>
+<!--========== END HEADER ==========-->
+{% endblock %}
+
+
+{% block content %}
+<!--========== PARALLAX ==========-->
+<div class="parallax-window" data-parallax="scroll" style="background-image: url({% static 'img/1920x1080/01.jpg' %});">
+    <div class="parallax-content container">
+        <h1 class="carousel-title">{{ sub.title }}</h1>
+    </div>
+</div>
+<!--========== PARALLAX ==========-->
+
+<!--========== PAGE LAYOUT ==========-->
+<!-- Our Exceptional Solutions -->
+<div class="content-lg container">
+    <div class="row margin-b-40">
+        <div class="col-sm-6">
+            <h2>About the subscription</h2>
+        </div>
+    </div>
+    <!--// end row -->
+
+    <div class="row margin-b-50">
+        <!-- Our Exceptional Solutions -->
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus laboriosam minima aut, sed similique
+            dolorum debitis quis beatae. Cumque omnis dolorum libero quisquam voluptate ullam quas, nesciunt at minus
+            veritatis eius repellat quo mollitia nostrum accusamus magnam perspiciatis voluptatibus laboriosam et
+            officiis, odit impedit! Autem recusandae iusto doloribus quae, consectetur dolore eveniet atque unde debitis
+            temporibus dolor necessitatibus non laudantium nihil eum quos provident saepe mollitia eaque officiis
+            obcaecati ea! Ex quibusdam excepturi nesciunt porro vel obcaecati vitae fuga reprehenderit odit fugiat
+            exercitationem beatae maxime a velit, pariatur incidunt laborum quia quod dolore earum necessitatibus dicta
+            repellendus. Reprehenderit tempore cupiditate unde, voluptatem pariatur consectetur accusantium asperiores
+            perferendis, laborum sit earum fugiat corrupti iure ipsa nesciunt ratione nihil dolorum commodi beatae
+            voluptas quaerat? Labore ipsum, error adipisci ipsa ab aliquam dicta culpa, sint necessitatibus quam
+            voluptas reprehenderit repellat optio. Ex, officia? Similique blanditiis assumenda ullam recusandae labore
+            natus debitis, illo officiis facere fugiat asperiores ratione eum quidem, cupiditate eos. Sunt itaque, illo
+            eligendi dignissimos illum omnis iusto, minus impedit tempore maiores beatae vero cum. Nemo beatae nesciunt
+            nam ad reiciendis quos placeat molestiae, mollitia ipsam dolorem debitis nulla inventore veniam quis. Rem
+            necessitatibus quis tempore quo aperiam nulla fugiat ad et!</p>
+        <!-- End Our Exceptional Solutions -->
+        <a href="{% url 'sub_detail' pk=sub.pk %}" class="btn-theme btn-theme-sm btn-default-bg text-uppercase"><span>Buy now -</span> ${{ sub.price }}</a>
+    </div>
+    <!--// end row -->
+
+
+
+    <!-- Pricing -->
+    <div class="bg-color-sky-light">
+        <div class="content-lg container">
+            <div class="row row-space-1">
+                {% for sub in all_sub %}
+                <div class="col-sm-4 sm-margin-b-2">
+                    <!-- Pricing -->
+                    <div class="pricing">
+                        <div class="margin-b-30">
+                            <i class="{{ sub.icon }}"></i>
+                            <h3>{{ sub.title }}<span> - $</span> {{ sub.price }}</h3>
+                            <p>{{ sub.content }}</p>
+                        </div>
+                        <ul class="list-unstyled pricing-list margin-b-50">
+                            <li class="pricing-list-item">{{ sub.options1 }}</li>
+                            <li class="pricing-list-item">{{ sub.options2 }}</li>
+                            <li class="pricing-list-item">{{ sub.options3 }}</li>
+                        </ul>
+                        <a href="{% url 'sub_detail' pk=sub.pk %}"
+                            class="btn-theme btn-theme-sm btn-default-bg text-uppercase">Choose</a>
+                    </div>
+                    <!-- End Pricing -->
+                </div>
+                {% endfor %}
+            </div>
+            <!--// end row -->
+        </div>
+    </div>
+    <!-- End Pricing -->
+</div>
+<!-- End Our Exceptional Solutions -->
+{% endblock %}

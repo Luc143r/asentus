@@ -3,180 +3,188 @@
 
 
 {% block head %}
-    <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
-    <link href="{% static 'vendor/simple-line-icons/simple-line-icons.min.css' %}" rel="stylesheet" type="text/css"/>
-    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
-    <!-- PAGE LEVEL PLUGIN STYLES -->
-    <link href="{% static 'css/animate.css' %}" rel="stylesheet">
-    <link href="{% static 'vendor/swiper/css/swiper.min.css' %}" rel="stylesheet" type="text/css"/>
-    <!-- THEME STYLES -->
-    <link href="{% static 'css/layout.min.css' %}" rel="stylesheet" type="text/css"/>
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="favicon.ico"/>
+<link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
+<link href="{% static 'vendor/simple-line-icons/simple-line-icons.min.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+<!-- PAGE LEVEL PLUGIN STYLES -->
+<link href="{% static 'css/animate.css' %}" rel="stylesheet">
+<link href="{% static 'vendor/swiper/css/swiper.min.css' %}" rel="stylesheet" type="text/css" />
+<!-- THEME STYLES -->
+<link href="{% static 'css/layout.min.css' %}" rel="stylesheet" type="text/css" />
+<!-- Favicon -->
+<link rel="shortcut icon" href="favicon.ico" />
 {% endblock %}
 
 
 {% block header %}
-    <!--========== HEADER ==========-->
-    <header class="header navbar-fixed-top">
-        <!-- Navbar -->
-        <nav class="navbar" role="navigation">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="menu-container">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="toggle-icon"></span>
-                    </button>
+<!--========== HEADER ==========-->
+<header class="header navbar-fixed-top">
+    <!-- Navbar -->
+    <nav class="navbar" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="menu-container">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="toggle-icon"></span>
+                </button>
 
-                    <!-- Logo -->
-                    <div class="logo">
-                        <a class="logo-wrap" href="/">
-                            <img class="logo-img logo-img-main" src="{% static 'img/logo.png' %}" alt="Asentus Logo">
-                            <img class="logo-img logo-img-active" src="{% static 'img/logo-dark.png' %}" alt="Asentus Logo">
-                        </a>
-                    </div>
-                    <!-- End Logo -->
+                <!-- Logo -->
+                <div class="logo">
+                    <a class="logo-wrap" href="/">
+                        <img class="logo-img logo-img-main" src="{% static 'img/logo.png' %}" alt="Asentus Logo">
+                        <img class="logo-img logo-img-active" src="{% static 'img/logo-dark.png' %}" alt="Asentus Logo">
+                    </a>
                 </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse nav-collapse">
-                    <div class="menu-container">
-                        <ul class="navbar-nav navbar-nav-right">
-                            <li class="nav-item"><a class="nav-item-child nav-item-hover active" href="/">Home</a></li>
-                            <li class="nav-item"><a class="nav-item-child nav-item-hover" href="/price">Pricing</a></li>
-                            <li class="nav-item"><a class="nav-item-child nav-item-hover" href="/about">About</a></li>
-                            <li class="nav-item"><a class="nav-item-child nav-item-hover" href="/product">Products</a></li>
-                            <li class="nav-item"><a class="nav-item-child nav-item-hover" href="/faq">FAQ</a></li>
-                            <li class="nav-item"><a class="nav-item-child nav-item-hover" href="/contact">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- End Navbar Collapse -->
+                <!-- End Logo -->
             </div>
-        </nav>
-        <!-- Navbar -->
-    </header>
-    <!--========== END HEADER ==========-->
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse nav-collapse">
+                <div class="menu-container">
+                    <ul class="navbar-nav navbar-nav-right">
+                        <li class="nav-item"><a class="nav-item-child nav-item-hover active" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-item-child nav-item-hover" href="/price">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-item-child nav-item-hover" href="/about">About</a></li>
+                        <li class="nav-item"><a class="nav-item-child nav-item-hover" href="/product">Products</a></li>
+                        <li class="nav-item"><a class="nav-item-child nav-item-hover" href="/faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-item-child nav-item-hover" href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End Navbar Collapse -->
+        </div>
+    </nav>
+    <!-- Navbar -->
+</header>
+<!--========== END HEADER ==========-->
 {% endblock %}
 
 
 {% block content %}
-        <!--========== PARALLAX ==========-->
-        <div class="parallax-window" data-parallax="scroll" style="background-image: url({% static 'img/1920x1080/01.jpg' %});">
-            <div class="parallax-content container">
-                <h1 class="carousel-title">Product Pricing</h1>
-                <p>Lorem ipsum dolor amet consectetur adipiscing dolore magna aliqua <br/> enim minim estudiat veniam siad venumus dolore</p>
-            </div>
-        </div>
-        <!--========== PARALLAX ==========-->
+<!--========== PARALLAX ==========-->
+<div class="parallax-window" data-parallax="scroll" style="background-image: url({% static 'img/1920x1080/01.jpg' %});">
+    <div class="parallax-content container">
+        <h1 class="carousel-title">Product Pricing</h1>
+        <p>Lorem ipsum dolor amet consectetur adipiscing dolore magna aliqua <br /> enim minim estudiat veniam siad
+            venumus dolore</p>
+    </div>
+</div>
+<!--========== PARALLAX ==========-->
 
-        <!--========== PAGE LAYOUT ==========-->
-        <!-- Pricing -->
-        <div class="bg-color-sky-light">
-            <div class="content-lg container">
-                <div class="row row-space-1">
-                    {% for sub in subscriptions %}
-                        <div class="col-sm-4 sm-margin-b-2">
-                            <!-- Pricing -->
-                            <div class="pricing">
-                                <div class="margin-b-30">
-                                    <i class="{{sub.icon}}"></i>
-                                    <h3>{{ sub.title }}<span> - $</span> {{ sub.price }}</h3>
-                                    <p>{{ sub.content }}</p>
-                                </div>
-                                <ul class="list-unstyled pricing-list margin-b-50">
-                                    <li class="pricing-list-item">{{ sub.options1 }}</li>
-                                    <li class="pricing-list-item">{{ sub.options2 }}</li>
-                                    <li class="pricing-list-item">{{ sub.options3 }}</li>
-                                </ul>
-                                <a href="/price" class="btn-theme btn-theme-sm btn-default-bg text-uppercase">Choose</a>
-                            </div>
-                            <!-- End Pricing -->
-                        </div>
-                    {% endfor %}
-                </div>
-                <!--// end row -->
-            </div>
-        </div>
-        <!-- End Pricing -->
-
-        <!-- Testimonials -->
-        <div class="content-lg container">
-            <div class="row">
-                <div class="col-sm-9">
-                    <h2>Why Customers Are Choosing Asentus?</h2>
-
-                    <!-- Swiper Testimonials -->
-                    <div class="swiper-slider swiper-testimonials">
-                        <!-- Swiper Wrapper -->
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <blockquote class="blockquote">
-                                    <div class="margin-b-20">
-                                        Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret dolore magna aliqua. Ut enim minim veniam exercitation laboris ut siad consequat siad minim enum esqudiat dolore.
-                                    </div>
-                                    <div class="margin-b-20">
-                                        Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret tempor incididunt dolore magna consequat siad minim aliqua.
-                                    </div>
-                                    <p><span class="fweight-700 color-link">Joh Milner</span>, Metronic Customer</p>
-                                </blockquote>
-                            </div>
-                            <div class="swiper-slide">
-                                <blockquote class="blockquote">
-                                    <div class="margin-b-20">
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </div>
-                                    <div class="margin-b-20">
-                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                    </div>
-                                    <p><span class="fweight-700 color-link">Alex Clarson</span>, Metronic Customer</p>
-                                </blockquote>
-                            </div>
-                        </div>
-                        <!-- End Swiper Wrapper -->
-
-                        <!-- Pagination -->
-                        <div class="swiper-testimonials-pagination"></div>
+<!--========== PAGE LAYOUT ==========-->
+<!-- Pricing -->
+<div class="bg-color-sky-light">
+    <div class="content-lg container">
+        <div class="row row-space-1">
+            {% for sub in subscriptions %}
+            <div class="col-sm-4 sm-margin-b-2">
+                <!-- Pricing -->
+                <div class="pricing">
+                    <div class="margin-b-30">
+                        <i class="{{sub.icon}}"></i>
+                        <h3>{{ sub.title }}<span> - $</span> {{ sub.price }}</h3>
+                        <p>{{ sub.content }}</p>
                     </div>
-                    <!-- End Swiper Testimonials -->
+                    <ul class="list-unstyled pricing-list margin-b-50">
+                        <li class="pricing-list-item">{{ sub.options1 }}</li>
+                        <li class="pricing-list-item">{{ sub.options2 }}</li>
+                        <li class="pricing-list-item">{{ sub.options3 }}</li>
+                    </ul>
+                    <a href="{% url 'sub_detail' pk=sub.pk %}"
+                        class="btn-theme btn-theme-sm btn-default-bg text-uppercase">Choose</a>
                 </div>
+                <!-- End Pricing -->
             </div>
-            <!--// end row -->
+            {% endfor %}
         </div>
-        <!-- End Testimonials -->
+        <!--// end row -->
+    </div>
+</div>
+<!-- End Pricing -->
 
-        <!-- Clients -->
-        <div class="bg-color-sky-light">
-            <div class="content-lg container">
-                <!-- Swiper Clients -->
-                <div class="swiper-slider swiper-clients">
-                    <!-- Swiper Wrapper -->
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img class="swiper-clients-img" src="{% static 'img/clients/01.png' %}" alt="Clients Logo">
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="swiper-clients-img" src="{% static 'img/clients/02.png' %}" alt="Clients Logo">
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="swiper-clients-img" src="{% static 'img/clients/03.png' %}" alt="Clients Logo">
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="swiper-clients-img" src="{% static 'img/clients/04.png' %}" alt="Clients Logo">
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="swiper-clients-img" src="{% static 'img/clients/05.png' %}" alt="Clients Logo">
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="swiper-clients-img" src="{% static 'img/clients/06.png' %}" alt="Clients Logo">
-                        </div>
+<!-- Testimonials -->
+<div class="content-lg container">
+    <div class="row">
+        <div class="col-sm-9">
+            <h2>Why Customers Are Choosing Asentus?</h2>
+
+            <!-- Swiper Testimonials -->
+            <div class="swiper-slider swiper-testimonials">
+                <!-- Swiper Wrapper -->
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <blockquote class="blockquote">
+                            <div class="margin-b-20">
+                                Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret
+                                dolore magna aliqua. Ut enim minim veniam exercitation laboris ut siad consequat siad
+                                minim enum esqudiat dolore.
+                            </div>
+                            <div class="margin-b-20">
+                                Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret
+                                tempor incididunt dolore magna consequat siad minim aliqua.
+                            </div>
+                            <p><span class="fweight-700 color-link">Joh Milner</span>, Metronic Customer</p>
+                        </blockquote>
                     </div>
-                    <!-- End Swiper Wrapper -->
+                    <div class="swiper-slide">
+                        <blockquote class="blockquote">
+                            <div class="margin-b-20">
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                officia deserunt mollit anim id est laborum.
+                            </div>
+                            <div class="margin-b-20">
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                commodo consequat.
+                            </div>
+                            <p><span class="fweight-700 color-link">Alex Clarson</span>, Metronic Customer</p>
+                        </blockquote>
+                    </div>
                 </div>
-                <!-- End Swiper Clients -->
+                <!-- End Swiper Wrapper -->
+
+                <!-- Pagination -->
+                <div class="swiper-testimonials-pagination"></div>
             </div>
+            <!-- End Swiper Testimonials -->
         </div>
-        <!-- End Clients -->
-        <!--========== END PAGE LAYOUT ==========-->
+    </div>
+    <!--// end row -->
+</div>
+<!-- End Testimonials -->
+
+<!-- Clients -->
+<div class="bg-color-sky-light">
+    <div class="content-lg container">
+        <!-- Swiper Clients -->
+        <div class="swiper-slider swiper-clients">
+            <!-- Swiper Wrapper -->
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img class="swiper-clients-img" src="{% static 'img/clients/01.png' %}" alt="Clients Logo">
+                </div>
+                <div class="swiper-slide">
+                    <img class="swiper-clients-img" src="{% static 'img/clients/02.png' %}" alt="Clients Logo">
+                </div>
+                <div class="swiper-slide">
+                    <img class="swiper-clients-img" src="{% static 'img/clients/03.png' %}" alt="Clients Logo">
+                </div>
+                <div class="swiper-slide">
+                    <img class="swiper-clients-img" src="{% static 'img/clients/04.png' %}" alt="Clients Logo">
+                </div>
+                <div class="swiper-slide">
+                    <img class="swiper-clients-img" src="{% static 'img/clients/05.png' %}" alt="Clients Logo">
+                </div>
+                <div class="swiper-slide">
+                    <img class="swiper-clients-img" src="{% static 'img/clients/06.png' %}" alt="Clients Logo">
+                </div>
+            </div>
+            <!-- End Swiper Wrapper -->
+        </div>
+        <!-- End Swiper Clients -->
+    </div>
+</div>
+<!-- End Clients -->
+<!--========== END PAGE LAYOUT ==========-->
 {% endblock %}
