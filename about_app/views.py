@@ -1,8 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from rest_framework import viewsets
 from django.core.mail import send_mail
 from django.http import Http404, HttpResponseRedirect
 
 from .models import Latest_product, Subscription, About_us, Team, Contact, Feedback
+from .serializers import *
 from .forms import FeedbackForms
 
 
@@ -220,3 +222,22 @@ def team_detail(request, pk):
         form = FeedbackForms()
 
     return render (request, 'about_app/team_detail.html', {'all_team': all_team, 'team': team, 'form': form})
+
+
+# API viewsets
+
+class ProductViewSet(viewsets.ModelViewSet):
+    queryset = Latest_product.objects.all()
+    serializer_class = ProductSerializer
+
+class SubViewSet(viewsets.ModelViewSet):
+    queryset = Subscription.objects.all()
+    serializer_class = SubSerializer
+
+class TeamViewSet(viewsets.ModelViewSet):
+    queryset = Team.objects.all()
+    serializer_class = TeamSerializer
+
+class FeedbackViewSet(viewsets.ModelViewSet):
+    queryset = Feedback.objects.all()
+    serializer_class = FeedbackSerializer
