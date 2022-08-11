@@ -11,6 +11,7 @@ class SubSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Subscription
         fields = ('id', 'title', 'price', 'options1', 'options2', 'options3')
+        read_only_fields = fields
 
 class TeamSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
