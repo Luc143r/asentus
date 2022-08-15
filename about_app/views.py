@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from rest_framework import viewsets
+from rest_framework.response import Response
+from rest_framework.views import APIView
 from django.core.mail import send_mail
 from django.http import Http404, HttpResponseRedirect
 
@@ -9,6 +11,7 @@ from .forms import FeedbackForms
 
 
 # Create your views here.
+
 
 def index_page(request):
     products = Latest_product.objects.all()
@@ -23,11 +26,17 @@ def index_page(request):
             phone_user = form.cleaned_data.get("phone_field")
             message_user = form.cleaned_data.get("message_field")
             form.clean()
-            Feedback_data = Feedback.objects.create(name=name_user, email=email_user, phone=phone_user, message=message_user)
-        return HttpResponseRedirect('/feedback')
+            Feedback_data = Feedback.objects.create(
+                name=name_user, email=email_user, phone=phone_user, message=message_user
+            )
+        return HttpResponseRedirect("/feedback")
     else:
         form = FeedbackForms()
-    return render(request, 'about_app/index.html', {"products": products, "subscriptions": sub, "about": about, "form": form})
+    return render(
+        request,
+        "about_app/index.html",
+        {"products": products, "subscriptions": sub, "about": about, "form": form},
+    )
 
 
 def about_page(request):
@@ -43,13 +52,17 @@ def about_page(request):
             phone_user = form.cleaned_data.get("phone_field")
             message_user = form.cleaned_data.get("message_field")
             form.clean()
-            
-            Feedback_data = Feedback.objects.create(name=name_user, email=email_user, phone=phone_user, message=message_user)
-        return HttpResponseRedirect('/feedback')
+
+            Feedback_data = Feedback.objects.create(
+                name=name_user, email=email_user, phone=phone_user, message=message_user
+            )
+        return HttpResponseRedirect("/feedback")
     else:
         form = FeedbackForms()
 
-    return render(request, 'about_app/about.html', {"about": about, "team": team, "form": form})
+    return render(
+        request, "about_app/about.html", {"about": about, "team": team, "form": form}
+    )
 
 
 def contact_page(request):
@@ -64,13 +77,17 @@ def contact_page(request):
             phone_user = form.cleaned_data.get("phone_field")
             message_user = form.cleaned_data.get("message_field")
             form.clean()
-            
-            Feedback_data = Feedback.objects.create(name=name_user, email=email_user, phone=phone_user, message=message_user)
-        return HttpResponseRedirect('/feedback')
+
+            Feedback_data = Feedback.objects.create(
+                name=name_user, email=email_user, phone=phone_user, message=message_user
+            )
+        return HttpResponseRedirect("/feedback")
     else:
         form = FeedbackForms()
-    
-    return render(request, 'about_app/contact.html', {"contact": contacts, "form": form})
+
+    return render(
+        request, "about_app/contact.html", {"contact": contacts, "form": form}
+    )
 
 
 def faq_page(request):
@@ -86,13 +103,19 @@ def faq_page(request):
             phone_user = form.cleaned_data.get("phone_field")
             message_user = form.cleaned_data.get("message_field")
             form.clean()
-            
-            Feedback_data = Feedback.objects.create(name=name_user, email=email_user, phone=phone_user, message=message_user)
-        return HttpResponseRedirect('/feedback')
+
+            Feedback_data = Feedback.objects.create(
+                name=name_user, email=email_user, phone=phone_user, message=message_user
+            )
+        return HttpResponseRedirect("/feedback")
     else:
         form = FeedbackForms()
 
-    return render(request, 'about_app/faq.html', {"subscriptions": sub, "about": about, "form": form})
+    return render(
+        request,
+        "about_app/faq.html",
+        {"subscriptions": sub, "about": about, "form": form},
+    )
 
 
 def price_page(request):
@@ -107,13 +130,17 @@ def price_page(request):
             phone_user = form.cleaned_data.get("phone_field")
             message_user = form.cleaned_data.get("message_field")
             form.clean()
-            
-            Feedback_data = Feedback.objects.create(name=name_user, email=email_user, phone=phone_user, message=message_user)
-        return HttpResponseRedirect('/feedback')
+
+            Feedback_data = Feedback.objects.create(
+                name=name_user, email=email_user, phone=phone_user, message=message_user
+            )
+        return HttpResponseRedirect("/feedback")
     else:
         form = FeedbackForms()
 
-    return render(request, 'about_app/pricing.html', {"subscriptions": sub, "form": form})
+    return render(
+        request, "about_app/pricing.html", {"subscriptions": sub, "form": form}
+    )
 
 
 def product_page(request):
@@ -128,13 +155,17 @@ def product_page(request):
             phone_user = form.cleaned_data.get("phone_field")
             message_user = form.cleaned_data.get("message_field")
             form.clean()
-            
-            Feedback_data = Feedback.objects.create(name=name_user, email=email_user, phone=phone_user, message=message_user)
-        return HttpResponseRedirect('/feedback')
+
+            Feedback_data = Feedback.objects.create(
+                name=name_user, email=email_user, phone=phone_user, message=message_user
+            )
+        return HttpResponseRedirect("/feedback")
     else:
         form = FeedbackForms()
 
-    return render(request, 'about_app/products.html', {"products": products, "form": form})
+    return render(
+        request, "about_app/products.html", {"products": products, "form": form}
+    )
 
 
 def product_detail(request, pk):
@@ -150,13 +181,19 @@ def product_detail(request, pk):
             phone_user = form.cleaned_data.get("phone_field")
             message_user = form.cleaned_data.get("message_field")
             form.clean()
-            
-            Feedback_data = Feedback.objects.create(name=name_user, email=email_user, phone=phone_user, message=message_user)
-        return HttpResponseRedirect('/feedback')
+
+            Feedback_data = Feedback.objects.create(
+                name=name_user, email=email_user, phone=phone_user, message=message_user
+            )
+        return HttpResponseRedirect("/feedback")
     else:
         form = FeedbackForms()
 
-    return render(request, 'about_app/product_detail.html', {"product": product, "products": all_products, "form": form})
+    return render(
+        request,
+        "about_app/product_detail.html",
+        {"product": product, "products": all_products, "form": form},
+    )
 
 
 def feedback_page(request):
@@ -171,13 +208,17 @@ def feedback_page(request):
             phone_user = form.cleaned_data.get("phone_field")
             message_user = form.cleaned_data.get("message_field")
             form.clean()
-            
-            Feedback_data = Feedback.objects.create(name=name_user, email=email_user, phone=phone_user, message=message_user)
-        return HttpResponseRedirect('/feedback')
+
+            Feedback_data = Feedback.objects.create(
+                name=name_user, email=email_user, phone=phone_user, message=message_user
+            )
+        return HttpResponseRedirect("/feedback")
     else:
         form = FeedbackForms()
-    
-    return render(request, 'about_app/feedback.html', {'feedback': feedback, "form": form})
+
+    return render(
+        request, "about_app/feedback.html", {"feedback": feedback, "form": form}
+    )
 
 
 def subscriptions_detail(request, pk):
@@ -193,13 +234,19 @@ def subscriptions_detail(request, pk):
             phone_user = form.cleaned_data.get("phone_field")
             message_user = form.cleaned_data.get("message_field")
             form.clean()
-            
-            Feedback_data = Feedback.objects.create(name=name_user, email=email_user, phone=phone_user, message=message_user)
-        return HttpResponseRedirect('/feedback')
+
+            Feedback_data = Feedback.objects.create(
+                name=name_user, email=email_user, phone=phone_user, message=message_user
+            )
+        return HttpResponseRedirect("/feedback")
     else:
         form = FeedbackForms()
 
-    return render(request, 'about_app/subscription_detail.html', {'all_sub': all_sub, 'sub': sub, 'form': form})
+    return render(
+        request,
+        "about_app/subscription_detail.html",
+        {"all_sub": all_sub, "sub": sub, "form": form},
+    )
 
 
 def team_detail(request, pk):
@@ -215,28 +262,36 @@ def team_detail(request, pk):
             phone_user = form.cleaned_data.get("phone_field")
             message_user = form.cleaned_data.get("message_field")
             form.clean()
-            
-            Feedback_data = Feedback.objects.create(name=name_user, email=email_user, phone=phone_user, message=message_user)
-        return HttpResponseRedirect('/feedback')
+
+            Feedback_data = Feedback.objects.create(
+                name=name_user, email=email_user, phone=phone_user, message=message_user
+            )
+        return HttpResponseRedirect("/feedback")
     else:
         form = FeedbackForms()
 
-    return render (request, 'about_app/team_detail.html', {'all_team': all_team, 'team': team, 'form': form})
+    return render(
+        request,
+        "about_app/team_detail.html",
+        {"all_team": all_team, "team": team, "form": form},
+    )
 
 
 # API viewsets
-
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Latest_product.objects.all()
     serializer_class = ProductSerializer
+
 
 class SubViewSet(viewsets.ModelViewSet):
     queryset = Subscription.objects.all()
     serializer_class = SubSerializer
 
+
 class TeamViewSet(viewsets.ModelViewSet):
     queryset = Team.objects.all()
     serializer_class = TeamSerializer
+
 
 class FeedbackViewSet(viewsets.ModelViewSet):
     queryset = Feedback.objects.all()
